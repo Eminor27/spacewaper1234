@@ -1,0 +1,14 @@
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  thymeleaf:
+    enabled: true
+  security:
+    strategy: session
+
+server:
+  servlet:
+    session:
+      persistent: false

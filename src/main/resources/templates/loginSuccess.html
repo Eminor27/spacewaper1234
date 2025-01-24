@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 성공</title>
+</head>
+<body>
+    <h1 style="text-align: center">로그인 성공!</h1>
+    <a href="/">홈으로 이동</a>
+ <!-- 일반 페이지 이동 버튼 -->
+    <div style="text-align: center">
+        <a href="/main">
+            <button>메인 페이지로 이동</button>
+        </a>
+    </div>
+    <!-- 학생 페이지 이동 버튼 -->
+    <div style="text-align: center" th:if="${userRole eq 'ROLE_STUDENT'}">
+        <a href="/studentPage">
+            <button>학생 페이지로 이동</button>
+        </a>
+    </div>
+
+    <!-- 교수 페이지 이동 버튼 -->
+    <div style="text-align: center" th:if="${userRole eq 'ROLE_PROFESSOR'}">
+        <a href="/professorPage">
+            <button>교수 페이지로 이동</button>
+        </a>
+    </div>
+
+    <!-- 관리자 페이지 이동 버튼 -->
+    <div th:if="${userRole eq 'ROLE_ADMIN'}">
+    <a href="/adminPage"><button>관리자 페이지로 이동</button></a>
+</div>
+
+</body>
+</html>
